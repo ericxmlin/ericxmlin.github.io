@@ -46,7 +46,7 @@ h2 { line-height: 1.2; }
   font-size: .75rem;
   letter-spacing: -.04em;
 }
-nav { display: flex; gap: clamp(.75rem, 3vw, 2.25rem); }
+nav { display: flex; flex-wrap: wrap; gap: clamp(.75rem, 3vw, 2.25rem); }
 nav a {
   position: relative;
   display: inline-flex;
@@ -192,6 +192,43 @@ nav a:hover, .text-link:hover { color: var(--blue-dark); text-decoration: underl
 .footer-inner summary { cursor: pointer; }
 .footer-inner details p { margin-top: .4rem; }
 
+.gallery-intro { margin-top: -1rem; color: var(--muted); font-size: 1.15rem; }
+.photo-empty {
+  margin-top: 1.75rem;
+  padding: 1.5rem;
+  border: 1px solid #d0d6fa;
+  background: var(--soft-blue);
+  color: var(--muted);
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+.photo-card { margin: 0; border: 1px solid var(--line); background: #fffefa; }
+.photo-card a { display: block; background: #191d35; }
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+.photo-card figcaption { padding: .8rem 1rem; font-weight: 650; }
+
+/* Fit the desktop hero between the header and footer. Keep normal scrolling
+   available on small or zoomed-in windows so all content remains accessible. */
+@media (min-width: 721px) and (min-height: 420px) {
+  .home-page { min-height: 100svh; }
+  .home-page main { display: grid; align-items: center; }
+  .home-page .hero { padding-block: 1.5rem; }
+  .home-page .hero h1 { font-size: clamp(3.75rem, min(10.2vw, 18svh), 9.25rem); }
+  .home-page .hero-art {
+    width: min(100%, calc((100svh - 13rem) * 1.14));
+    justify-self: end;
+  }
+}
+
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; gap: 2.2rem; }
   .hero-art { aspect-ratio: 1.4; }
@@ -202,6 +239,7 @@ nav a:hover, .text-link:hover { color: var(--blue-dark); text-decoration: underl
   .header-inner { min-height: 64px; flex-wrap: wrap; gap: 0 .95rem; padding-block: .5rem; }
   .brand { gap: .4rem; }
   .brand span { width: 1.8rem; height: 1.8rem; }
+  nav { column-gap: .85rem; row-gap: 0; }
   nav a { font-size: .85rem; }
   .project-grid { grid-template-columns: 1fr; }
 }
