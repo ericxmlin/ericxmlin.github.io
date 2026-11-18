@@ -66,7 +66,7 @@ nav span { color: var(--blue); }
   text-transform: uppercase;
 }
 .dot { display: inline-block; width: .49rem; height: .49rem; margin-right: .38rem; border-radius: 50%; background: var(--blue); }
-.hero h1 { font-size: clamp(4.15rem, 10.2vw, 9.25rem); font-weight: 780; letter-spacing: -.095em; line-height: .97; margin: .8rem 0 1.35rem; }
+.hero h1 { font-size: clamp(4.15rem, 10.2vw, 9.25rem); font-weight: 780; letter-spacing: -.045em; word-spacing: .07em; line-height: .97; margin: .8rem 0 1.35rem; }
 .hero h1 span, .mock-body b span { color: var(--blue); }
 .hero-lead { max-width: 37ch; font-size: clamp(1.13rem, 2.05vw, 1.55rem); line-height: 1.5; color: var(--muted); }
 .hero-links, .contact-links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.35rem; }
@@ -138,7 +138,7 @@ nav span { color: var(--blue); }
 .mock-bar { display: flex; gap: .17rem; padding: .36rem; border-bottom: 1px solid #dde0ec; }
 .mock-bar i { width: .22rem; height: .22rem; border-radius: 50%; background: #465bce; }
 .mock-body { display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: .6rem; padding: 8%; }
-.mock-body b { font-size: clamp(.82rem, 3vw, 2.4rem); line-height: 1; letter-spacing: -.085em; white-space: nowrap; }
+.mock-body b { font-size: clamp(.82rem, 3vw, 2.4rem); line-height: 1; letter-spacing: -.06em; word-spacing: .055em; white-space: nowrap; }
 .mock-body i { display: block; width: 78%; height: .14rem; margin-top: .3rem; background: #c1c6dd; }
 .mock-body i + i { width: 55%; }
 .mock-orbit { aspect-ratio: 1.4; background: radial-gradient(ellipse, #e0e9ff 4%, #849aff 7%, #2a46db 35%, #1e31ad 70%); }
