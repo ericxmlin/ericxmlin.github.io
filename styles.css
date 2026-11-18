@@ -33,7 +33,7 @@ h2 { line-height: 1.2; }
 .skip-link:focus { transform: translateY(0); }
 
 .site-header { border-bottom: 1px solid var(--line); }
-.header-inner, .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .header-inner { min-height: 76px; }
 .brand { display: inline-flex; align-items: center; gap: .65rem; font-weight: 750; text-decoration: none; }
 .brand span {
@@ -186,11 +186,6 @@ nav a:hover, .text-link:hover { color: var(--blue-dark); text-decoration: underl
 }
 .contact-panel p { max-width: 49ch; }
 .contact-links { margin-top: 1.35rem; }
-.site-footer { border-top: 1px solid var(--line); }
-.footer-inner { flex-wrap: wrap; align-items: start; padding-block: 1.25rem; font-size: .88rem; }
-.footer-inner details { max-width: 43ch; color: var(--muted); }
-.footer-inner summary { cursor: pointer; }
-.footer-inner details p { margin-top: .4rem; }
 
 .gallery-intro { margin-top: -1rem; color: var(--muted); font-size: 1.15rem; }
 .photo-empty {
@@ -216,7 +211,7 @@ nav a:hover, .text-link:hover { color: var(--blue-dark); text-decoration: underl
 }
 .photo-card figcaption { padding: .8rem 1rem; font-weight: 650; }
 
-/* Fit the desktop hero between the header and footer. Keep normal scrolling
+/* Fit the desktop hero below the header. Keep normal scrolling
    available on small or zoomed-in windows so all content remains accessible. */
 @media (min-width: 721px) and (min-height: 420px) {
   .home-page { min-height: 100svh; }
@@ -224,7 +219,7 @@ nav a:hover, .text-link:hover { color: var(--blue-dark); text-decoration: underl
   .home-page .hero { padding-block: 1.5rem; }
   .home-page .hero h1 { font-size: clamp(3.75rem, min(10.2vw, 18svh), 9.25rem); }
   .home-page .hero-art {
-    width: min(100%, calc((100svh - 13rem) * 1.14));
+    width: min(100%, calc((100svh - 9rem) * 1.14));
     justify-self: end;
   }
 }
