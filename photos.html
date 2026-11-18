@@ -1,61 +1,36 @@
 ---
+layout: portfolio
+title: Photos
 permalink: /photos/
+description: Astrophotography by Eric Lin.
 ---
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Astrophotography by Eric Lin.">
-  <title>Photos · Eric Lin</title>
-  <link rel="stylesheet" href="/styles.css?v=7e0a29159c">
-</head>
-<body id="top">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="/" aria-label="Eric Lin, home"><span>EL</span> Eric Lin</a>
-      <nav aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/projects/">Projects</a>
-        <a href="/photos/" aria-current="page">Photos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main id="main">
-    <section class="wrap page" aria-labelledby="page-title">
-      <h1 id="page-title" class="page-title">Photos</h1>
-      <p class="gallery-intro">My astrophotography.</p>
-      {% assign photo_extensions = ".jpg,.jpeg,.png,.webp,.avif" | split: "," %}
-      {% assign gallery_files = site.static_files | sort_natural: "name" %}
-      {% assign has_photos = false %}
-      {% capture photo_cards %}
-        {% for file in gallery_files %}
-          {% assign folder = file.path | slice: 0, 8 %}
-          {% assign extension = file.extname | downcase %}
-          {% if folder == "/photos/" and photo_extensions contains extension %}
-            {% assign has_photos = true %}
-            {% assign caption = file.basename | replace: "-", " " | replace: "_", " " %}
-            <figure class="photo-card">
-              <a href="{{ file.path | relative_url | uri_escape | escape }}" aria-label="Open full-size photo: {{ caption | escape }}">
-                <img src="{{ file.path | relative_url | uri_escape | escape }}" alt="{{ caption | escape }}" loading="lazy" decoding="async">
-              </a>
-              <figcaption>{{ caption | escape }}</figcaption>
-            </figure>
-          {% endif %}
-        {% endfor %}
-      {% endcapture %}
-      {% if has_photos %}
-        <div class="photo-grid">
-          {{ photo_cards }}
-        </div>
-      {% else %}
-        <p class="photo-empty">Photos will be posted here soon.</p>
-      {% endif %}
-    </section>
-  </main>
-</body>
-</html>
+<h1 class="visually-hidden">Photos</h1>
+<p class="intro-text">My astrophotography.</p>
+
+{% assign photo_extensions = ".jpg,.jpeg,.png,.webp,.avif" | split: "," %}
+{% assign gallery_files = site.static_files | sort_natural: "name" %}
+{% assign has_photos = false %}
+{% capture photo_cards %}
+  {% for file in gallery_files %}
+    {% assign folder = file.path | slice: 0, 8 %}
+    {% assign extension = file.extname | downcase %}
+    {% if folder == "/photos/" and photo_extensions contains extension %}
+      {% assign has_photos = true %}
+      {% assign caption = file.basename | replace: "-", " " | replace: "_", " " %}
+      <figure class="photo-card">
+        <a href="{{ file.path | relative_url | uri_escape | escape }}" aria-label="Open full-size photo: {{ caption | escape }}">
+          <img src="{{ file.path | relative_url | uri_escape | escape }}" alt="{{ caption | escape }}" loading="lazy" decoding="async">
+        </a>
+        <figcaption>{{ caption | escape }}</figcaption>
+      </figure>
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+{% if has_photos %}
+  <div class="photo-grid">
+    {{ photo_cards }}
+  </div>
+{% else %}
+  <p class="photo-empty">Photos will be posted here soon.</p>
+{% endif %}

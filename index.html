@@ -1,63 +1,39 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Eric Lin’s portfolio at the intersection of statistics, machine learning, and software.">
-  <title>Eric Lin · Personal Portfolio</title>
-  <link rel="stylesheet" href="/styles.css?v=7e0a29159c">
-  <script>
-    // Forward bookmarks from the original one-page portfolio.
-    const legacyPages = new Map([
-      ["#about", "/about/"],
-      ["#work", "/projects/"],
-      ["#contact", "/contact/"],
-    ]);
-    const nextPage = legacyPages.get(location.hash);
-    if (nextPage) location.replace(nextPage);
-  </script>
-</head>
-<body id="top" class="home-page">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="/" aria-label="Eric Lin, home"><span>EL</span> Eric Lin</a>
-      <nav aria-label="Main navigation">
-        <a href="/" aria-current="page">Home</a>
-        <a href="/about/">About</a>
-        <a href="/projects/">Projects</a>
-        <a href="/photos/">Photos</a>
-        <a href="/contact/">Contact</a>
-      </nav>
-    </div>
-  </header>
+---
+layout: portfolio
+title: Home
+permalink: /
+description: Eric Lin’s portfolio at the intersection of statistics, machine learning, and software.
+---
 
-  <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Carnegie Mellon University</p>
-        <h1 id="hero-title">Eric Lin<span>.</span></h1>
-        <p class="hero-lead">I’m a CMU student interested in how we model data, build software, and evaluate AI.</p>
-        <div class="hero-links">
-          <a class="button" href="/projects/">Explore my work <span aria-hidden="true">→</span></a>
-          <a class="text-link" href="/about/">More about me <span aria-hidden="true">→</span></a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-orbit orbit-one"></div>
-        <div class="art-orbit orbit-two"></div>
-        <div class="art-orbit orbit-three"></div>
-        <div class="art-axis art-axis-x"></div>
-        <div class="art-axis art-axis-y"></div>
-        <div class="art-core"></div>
-        <i class="art-point point-one"></i>
-        <i class="art-point point-two"></i>
-        <i class="art-point point-three"></i>
-        <i class="art-point point-four"></i>
-        <span class="art-cross cross-upper">+</span>
-        <span class="art-cross cross-lower">+</span>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+<section class="home-intro" aria-labelledby="intro-title">
+  <div>
+    <p class="label">Carnegie Mellon University</p>
+    <h1 id="intro-title">Eric Lin</h1>
+    <p class="intro-text">I’m a CMU student interested in how we model data, build software, and evaluate AI.</p>
+    <div class="links">
+      <a class="button" href="/projects/">Explore my work <span aria-hidden="true">→</span></a>
+      <a href="/about/">More about me</a>
+    </div>
+  </div>
+
+  <div class="orbit-art" aria-hidden="true">
+    <span class="orbit orbit-one"></span>
+    <span class="orbit orbit-two"></span>
+    <span class="orbit orbit-three"></span>
+    <span class="planet"></span>
+    <span class="moon moon-one"></span>
+    <span class="moon moon-two"></span>
+    <span class="moon moon-three"></span>
+  </div>
+</section>
+
+<script>
+  // Forward bookmarks from the original one-page portfolio.
+  const legacyPages = new Map([
+    ["#about", "/about/"],
+    ["#work", "/projects/"],
+    ["#contact", "/contact/"],
+  ]);
+  const nextPage = legacyPages.get(location.hash);
+  if (nextPage) location.replace(nextPage);
+</script>
