@@ -246,31 +246,38 @@ a:hover {
   margin-top: 1rem;
 }
 
-.skills {
-  padding: 1.4rem;
-  border-radius: .4rem;
-  background: var(--night);
-  color: #f1f6ff;
+.about-cards {
+  display: grid;
+  gap: 1rem;
 }
 
-.skills h2,
+.about-card {
+  padding: 1.4rem;
+  border: 1px solid #b6b8bc;
+  border-radius: .4rem;
+  background: #eeeef0;
+  color: var(--text);
+}
+
+.about-card h2,
 .contact-card h2,
 .project h2 {
   font-size: 1.2rem;
   line-height: 1.3;
 }
 
-.skills dl {
+.about-card > p,
+.about-card dl {
   margin-top: .85rem;
 }
 
-.skills dt {
+.about-card dt {
   margin-top: .6rem;
-  color: #afcfea;
+  color: var(--muted);
   font: 650 .82rem/1.5 ui-monospace, monospace;
 }
 
-.skills dd {
+.about-card dd {
   margin-top: .1rem;
 }
 
