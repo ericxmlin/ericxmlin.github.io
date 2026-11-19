@@ -131,11 +131,14 @@ a:hover {
 }
 
 .label {
-  font-size: 1.1rem;
   color: var(--accent);
   font: 650 .78rem/1.5 ui-monospace, monospace;
   letter-spacing: .06em;
   text-transform: uppercase;
+}
+
+.home-intro .label {
+  font-size: 1.1rem;
 }
 
 .intro-text {
